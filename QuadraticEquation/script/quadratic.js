@@ -4,7 +4,15 @@ document.addEventListener("DOMContentLoaded", function () {
         var a = parseFloat(document.getElementById("ka").value);
         var b = parseFloat(document.getElementById("kb").value);
         var c = parseFloat(document.getElementById("kc").value);
-
+        if (isNaN(a)) {
+            a = 0;
+        }
+        if (isNaN(b)) {
+            b = 0;
+        }
+        if (isNaN(c)) {
+            c = 0;
+        }
         var x;
         var discriminant = Math.pow(b, 2) - 4 * a * c;
 
@@ -20,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         var bString = "+" + b + "x ";
-        if (b === 0 || a ===0) {
+        if (b === 0 || a === 0) {
             bString = "";
         }
 
