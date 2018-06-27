@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             var x1 = (-b + Math.sqrt(discriminant)) / (2 * a);
             var x2 = (-b - Math.sqrt(discriminant)) / (2 * a);
-            result += " => Уравнение имеет 2 корня, <em>x1 = " + Math.round(x1 * 10) / 10 + ", x2 = " + Math.round(x2 * 10) / 10 + "</em>";
+            result += " => Уравнение имеет 2 корня, <em>x1 = " + x1.toFixed(2) + ", x2 = " + x2.toFixed(2) + "</em>";
         }
         var resultOutput = document.getElementById("result");
         resultOutput.innerHTML = result;
