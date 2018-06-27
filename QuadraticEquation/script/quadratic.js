@@ -20,12 +20,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         var bString = "+" + b + "x ";
-        if (b === 0) {
+        if (b === 0 || a ===0) {
             bString = "";
         }
-        if (a === 0 && b == 0) {
-            bString = "";
-        }
+
         if (a === 0 && b > 0) {
             bString = b + "x ";
         }
