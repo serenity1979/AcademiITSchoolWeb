@@ -1,0 +1,35 @@
+body {
+    font-size: 16px;
+    padding: 10px;
+}
+
+h1 {
+    font-size: 24px;
+    color: blue;
+}
+
+.sup {
+    font-size: 10px;
+}
+
+input {
+    font-size: 13px;
+    width: 50px;
+}
+
+#calculate-button:hover {
+    background: linear-gradient(to top, lightgreen, mediumspringgreen);
+}
+
+#calculate-button {
+    margin: 10px;
+    width: 175px;
+    height: 42px;
+    background: linear-gradient(to top, lightgreen,darkseagreen);
+    border: 1px solid darkseagreen; /* рамка*/
+    color: darkgreen;
+    cursor: pointer;
+}
+em {
+    font-style: italic;
+}
