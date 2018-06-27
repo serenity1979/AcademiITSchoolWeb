@@ -1,20 +1,45 @@
+/*
+замечания
+В целом всё очень хорошо, есть мелкие замечания.
+
+1. Сейчас в шапке неактивные ссылки всё равно кликабельные
+
+2. Размер шрифта сейчас всё же меньше, чем должен быть (-)
+
+3. В текстовых полях сейчас не такие отступы от левого края (+-)
+
+4. Неверное расстояние между кнопками (+)
+
+5. При наведении на иконки-кнопки курсор должен превращаться в руку.(+)
+И должен появляться title с описанием что кнопка делает -  откуда такое условие? (+)
+
+6. Остаток ЕТ - у значений размер и цвет шрифта (или жирность) не такой (+)
+
+7. Опечатка, должно быть "Валидатор" (+)
+
+8. Тут есть такая обводка:    (+)
+http://joxi.ru/eAO4a31CxxYM1r
+Ее тоже надо сделать
+
+*/
+
 body {
     font-family: sans-serif;
 }
 
 /* Заголовок страницы - панель с меню */
 .menu-panel ul {
-    display: table;
+    display: table;   /* поведение как таблица*/
     table-layout: fixed;
     width: 100%;
     margin: 0;
-    padding: 0;
+    padding: 0; /* отступ  */
     background-color: #FED61A;
     font-size: 19px;
 }
 
 .menu-panel li {
-    display: table-cell;
+    display: table-cell;   /* поведение как ячейка таблицы*/
     height: 60px;
     vertical-align: middle;
     text-align: center;
@@ -24,14 +49,17 @@ body {
     bottom: 0;
 }
 
+/* блоки в списках */
 .menu-panel li > div {
     border-right: 1px solid #CBAB16;
 }
 
+/* ссылки*/
 .menu-panel a {
-    display: block;
+    display: block;  /* изменяем поведение на блоки*/
     text-decoration: none;
     color: #846F0D;
+    cursor: pointer; /*  изменяется курсор при наведении. вид указательный палец*/
 }
 
 .menu-panel a:hover {
@@ -40,10 +68,11 @@ body {
 
 .menu-panel .dissabled a {
     text-decoration: none;
-    cursor: default;
+    cursor: default; /* вид курсора при наведения на элемент*/
     opacity: 0.3;
 }
 
+/* все ссылки, которые активны на понели меню*/
 .menu-panel .active a {
     text-decoration: underline;
     color: #D50308;
@@ -68,7 +97,7 @@ body {
 }
 
 .validator-table > thead > tr {
-    font-size: 12px;
+    font-size: 11px;
     color: #6D6D6D;
 }
 
@@ -82,17 +111,21 @@ body {
 }
 
 .validator-table > tbody > tr {
-    font-size: 12px;
+    font-size: 13px;
 }
 
 .validator-table .validator-col {
-    width: 70px;
+    width: 80px;
     text-align: left;
 }
 
 .validator-table .letter-col {
-    width: 50px;
+    width: 40px;
     text-align: center;
+}
+
+.validator-table > tbody .letter-col {
+    font-size: 12px;
 }
 
 .validator-table .address-col {
@@ -107,7 +140,11 @@ body {
 .validator-table .rest-col {
     width: 90px;
     text-align: center;
+}
+
+.validator-table > tbody .rest-col {
     font-weight: bold;
+    font-size: 16px;
 }
 
 .validator-table .request-col {
@@ -143,16 +180,22 @@ body {
     float: right;
 }
 
+.right-buttons .button-white {
+
+}
+
 .button {
     width: 175px;
     height: 42px;
     background: linear-gradient(to top, #80AD32, #8FBB3A);
-    border: 1px solid #648428;
+    border: 1px solid #648428; /* рамка*/
     color: #ffff;
-    cursor: pointer;
+    cursor: pointer; /*  изменяется курсор при наведении. вид указательный палец*/
     outline: none;
 }
 
+
+/* кнопка, если на нее навели курсор мыши.ь hover*/
 .button:hover {
     background: linear-gradient(to top, #80AD32, #C3DA94);
 }
@@ -163,15 +206,16 @@ body {
 
 .button.button-white {
     background: linear-gradient(to top, #CCCCCC, #F1F1F1);
-    border: 1px solid #AEAFAF;
+    border: 1px solid #AEAFAF; /* рамка*/
     color: #939393;
+    margin-left: 8px; /* задает внешние отступы элемента до соседних элементов.  */
 }
 
 /* Конек блока: панель кнопок */
 /* панель для запроса заявок */
 
 .request-panel {
-    margin-top: 10px;
+    margin-top: 10px; /* задает внешние отступы элемента — отступы от внешней границы элемента до границ родительского элемента или до соседних элементов.*/
     line-height: 40px;
     padding: 0 20px;
     color: #777777;
@@ -189,7 +233,7 @@ body {
 }
 
 .request-panel .refresh-button-part > * {
-    display: inline-block;
+    display: inline-block; /* делаем как линию блоков */
     vertical-align: middle;
 }
 
@@ -210,22 +254,39 @@ body {
     color: #656565;
 }
 
+/* в блоке с классом request-table дочерним злементам головы таблицы к заголовкам*/
+
 .request-table > thead > tr {
     color: #6D6D6D;
 }
 
+/* в блоке с классом request-table дочерним злементам головы таблицы к элементам заголовка*/
 .request-table > thead th {
-    height: 31px;
-    background-color: #FED61A;
-    border-top: 1px dotted #C9AA13;
-    border-right: 1px dotted #C9AA13;
-    text-align: left;
+    height: 31px; /* ширина */
+    background-color: #FED61A; /* цвет фон, закраска ячейки */
+    border-top: 1px dotted #C9AA13; /* верхняя граница таблицы; толщина стиль(пунктир) цвет */
+    border-right: 1px dotted #C9AA13; /* правая граница таблицы; толщина стиль(пунктир) цвет */
+    text-align: left; /* позиция текста */
+}
+
+.date-order-col {
+    border-top-left-radius: 5px; /* отмечаем закругления вверхнего края слева у первого столбца (в заголовке) */
+
+}
+
+.order-col {
+    border-top-right-radius: 5px;
 }
 
 .request-table th,
 .request-table td {
-    padding: 3px 20px;
-    font-size: 11px;
+    padding: 3px 10px; /* отступы от границ */
+    font-size: 11px; /* размер шрифта*/
+}
+
+.request-table th:nth-child(1),
+.request-table td:nth-child(1) {
+    padding: 0 30px; /* отступы от границ */
 }
 
 .request-table tbody {
@@ -233,7 +294,7 @@ body {
 }
 
 .request-table tbody td {
-    height: 32px;
+    height: 32px; /* высота строки*/
     border-right: 1px dotted #C9CACA;
     border-top: 1px dotted #C9CACA;
 }
